@@ -6,7 +6,7 @@ const titanic = document.querySelector('#titanic')
 // Set some styles on the titanic
 // display flex, justifyContent center, alignItems flex-end
 titanic.style.display = 'grid'
-titanic.style.gridTemplateColumns = 'repeat(20, 10px)'
+titanic.style.gridTemplateColumns = 'repeat(20, 20px)'
 titanic.style.gridGap = '1px'
 
 // Map over the data and make a new element for each passenger
