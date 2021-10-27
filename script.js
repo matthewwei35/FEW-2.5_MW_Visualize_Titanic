@@ -18,7 +18,10 @@ const passengers = data.map(p => {
 
 // Let's loop over each passenger and set some styles 
 passengers.forEach((p, i) => {
-  const { pclass, survived } = data[i].fields
+  const { pclass, survived, sex } = data[i].fields
+  if (sex === 'female') {
+    p.style.borderRadius = '100%'
+  }
   p.style.width = '15px'
   p.style.height = '15px'
   p.style.opacity = survived === 'Yes' ? '100%' : '50%' 
