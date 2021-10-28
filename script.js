@@ -28,32 +28,22 @@ passengers.forEach((p, i) => {
   p.style.backgroundColor = '#000'
 })
 
-// Challenges - 
+// Challenges
 
 // Make the squares a little bigger 15px by 15px. 
 // You'll need to change both the gridTemplateColumn on the
 // titanic and the width and height of each passenger. 
 
-
-
 // Change the number of columns on the titanic to 34
-
 
 // Display each passenger as a circle if they are female. 
 // Do this by setting the borderRadius of each passenger. 
 // Match the passenger in passengers to the object data 
 // in the data array by the index. 
 
-
-
 // Display each passengers who did not survive as 
 // opacity 0.5. 
-
-
 
 // Set the backgroundColor of each passenger by their 
 // embarked value. There are three possible values: 
 // 'S', 'C', and 'Q'
-
-
-
