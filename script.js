@@ -18,14 +18,30 @@ const passengers = data.map(p => {
 
 // Let's loop over each passenger and set some styles 
 passengers.forEach((p, i) => {
-  const { pclass, survived, sex } = data[i].fields
-  if (sex === 'female') {
-    p.style.borderRadius = '100%'
-  }
-  p.style.width = '15px'
-  p.style.height = '15px'
-  p.style.opacity = survived === 'Yes' ? '100%' : '50%' 
+  const { survived, sex, embarked, age } = data[i].fields
+  p.style.width = '20px'
+  p.style.height = '20px'
   p.style.backgroundColor = '#000'
+
+  p.style.opacity = survived === 'Yes' ? '100%' : '50%' 
+
+  if (sex === 'female') {
+    p.style.borderRadius = '50%'
+  }
+
+  if (embarked === 'S') {
+    p.style.backgroundColor = '#6D81FA'
+  } else if (embarked === 'Q') {
+    p.style.backgroundColor = '#26A339'
+  } else if (embarked === 'C') {
+    p.style.backgroundColor = '#FA865C'
+  }
+
+  if (age < 18) {
+    p.style.width = '10px'
+    p.style.height = '10px'
+    p.style.margin = '5px'
+  }
 })
 
 // Challenges
