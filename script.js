@@ -25,9 +25,7 @@ passengers.forEach((p, i) => {
 
   p.style.opacity = survived === 'Yes' ? '100%' : '50%' 
 
-  if (sex === 'female') {
-    p.style.borderRadius = '50%'
-  }
+  p.style.borderRadius = sex === 'female' ? '50%' : '0'
 
   if (embarked === 'S') {
     p.style.backgroundColor = '#6D81FA'
