@@ -27,13 +27,8 @@ passengers.forEach((p, i) => {
 
   p.style.borderRadius = sex === 'female' ? '50%' : '0'
 
-  if (embarked === 'S') {
-    p.style.backgroundColor = '#6D81FA'
-  } else if (embarked === 'Q') {
-    p.style.backgroundColor = '#26A339'
-  } else if (embarked === 'C') {
-    p.style.backgroundColor = '#FA865C'
-  }
+  const portColors = { S: '#6D81FA', C: '#FA865C', Q: '#26A339' }
+  p.style.backgroundColor = portColors[data[i].fields.embarked]
 
   if (age < 18) {
     p.style.width = '10px'
