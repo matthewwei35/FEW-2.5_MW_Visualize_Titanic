@@ -7,7 +7,7 @@ const titanic = document.querySelector('#titanic')
 // display flex, justifyContent center, alignItems flex-end
 titanic.style.display = 'grid'
 titanic.style.gridTemplateColumns = 'repeat(34, 20px)'
-titanic.style.gridGap = '1px'
+titanic.style.gridGap = '2px'
 
 // Map over the data and make a new element for each passenger
 const passengers = data.map(p => {
