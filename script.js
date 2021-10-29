@@ -1,5 +1,7 @@
 import data from './titanic-data.js'
 
+const portColors = { S: '#6D81FA', C: '#FA865C', Q: '#26A339', undefined: '#000' }
+
 // Get a reference to the #titanic
 const titanic = document.querySelector('#titanic')
 
@@ -16,9 +18,39 @@ const passengers = data.map(p => {
   return el
 })
 
+data.sort((a, b) => {
+  if (a.fields.sex === 'female') {
+    return -1
+  }
+  return 1
+})
+
+data.sort((a, b) => {
+  if (a.fields.survived === 'Yes') {
+    return -1
+  }
+  return 1
+})
+
+data.sort((a, b) => {
+  if (a.fields.embarked < b.fields.embarked) {
+    return -1
+  } else if (a.fields.embarked > b.fields.embarked) {
+    return 1
+  }
+  return 0
+})
+
+data.sort((a, b) => {
+  if (a.fields.age < 18) {
+    return 1
+  }
+  return -1
+})
+
 // Let's loop over each passenger and set some styles 
 passengers.forEach((p, i) => {
-  const { survived, sex, embarked, age } = data[i].fields
+  const { survived, sex, age } = data[i].fields
   p.style.width = '20px'
   p.style.height = '20px'
   p.style.backgroundColor = '#000'
@@ -27,7 +59,6 @@ passengers.forEach((p, i) => {
 
   p.style.borderRadius = sex === 'female' ? '50%' : '0'
 
-  const portColors = { S: '#6D81FA', C: '#FA865C', Q: '#26A339' }
   p.style.backgroundColor = portColors[data[i].fields.embarked]
 
   if (age < 18) {
@@ -37,6 +68,26 @@ passengers.forEach((p, i) => {
   }
 })
 
+const titanicEmbarked = document.querySelector('#titanic-embarked')
 
+const embarkedCounts = data.reduce((acc, p) => {
+  if (acc[p.fields.embarked] === undefined) {
+    acc[p.fields.embarked] = 1
+  } else {
+    acc[p.fields.embarked] += 1
+  }
+  return acc
+}, {})
 
+const embarkedKeys = Object.keys(embarkedCounts)
 
+embarkedKeys.forEach((e) => {
+  const el = document.createElement('div')
+  titanicEmbarked.appendChild(el)
+  el.style.width = '30px'
+  const count = embarkedCounts[e]
+  const percent = count / data.length * 100
+  el.style.height = `${percent}%`
+  el.style.backgroundColor = portColors[e]
+  el.style.margin = '1px'
+})

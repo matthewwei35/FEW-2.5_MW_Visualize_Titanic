@@ -1,1 +1,7 @@
-
+#titanic-embarked {
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid;
+  width: 200px;
+  height: 300px;
+}
