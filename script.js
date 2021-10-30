@@ -51,6 +51,8 @@ data.sort((a, b) => {
 // Let's loop over each passenger and set some styles 
 passengers.forEach((p, i) => {
   const { survived, sex, age } = data[i].fields
+  p.classList.add('passenger')
+  p.dataset.id = i
   p.style.width = '20px'
   p.style.height = '20px'
   p.style.backgroundColor = '#000'
@@ -90,4 +92,32 @@ embarkedKeys.forEach((e) => {
   el.style.height = `${percent}%`
   el.style.backgroundColor = portColors[e]
   el.style.margin = '1px'
+})
+
+const passengerDetails = document.querySelector('#passenger-details')
+
+document.body.addEventListener('mouseover', (e) => {
+  if (e.target.matches('.passenger')) {
+    const id = e.target.dataset.id
+    const fields = data[id].fields
+    passengerDetails.style.display = 'block'
+    passengerDetails.style.position = 'absolute'
+    passengerDetails.style.left = `${e.pageX}px`
+    passengerDetails.style.top = `${e.pageY}px`
+    passengerDetails.style.backgroundColor = '#FFF'
+    passengerDetails.style.border = '1px solid'
+    passengerDetails.style.padding = '0.5em'
+    passengerDetails.innerHTML = `
+    <strong>${fields.name}</strong>
+    <ul>
+      <li>Age: ${fields.age}</li>
+      <li>Fare: ${fields.fare}</li>
+    </ul>`
+  }
+})
+
+document.body.addEventListener('mouseout', (e) => {
+  if (e.target.matches('.passenger')) {
+    passengerDetails.style.display = 'none'
+  }
 })
