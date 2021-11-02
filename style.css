@@ -1,3 +1,7 @@
+#legend li {
+  font-size: 20px;
+}
+
 #titanic-embarked {
   display: flex;
   align-items: flex-end;
