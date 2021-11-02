@@ -1,5 +1,19 @@
-#legend li {
-  font-size: 20px;
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#titanic, #sort-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#sort-buttons {
+  margin-top: 2rem;
+}
+
+#embarked-percentage {
+  margin-right: 3rem;
 }
 
 #titanic-embarked {
@@ -8,4 +22,13 @@
   border: 1px solid;
   width: 200px;
   height: 300px;
+}
+
+#legend li {
+  font-size: 18px;
+}
+
+#embarked-legend {
+  display: flex;
+  justify-content: center;
 }

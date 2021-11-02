@@ -13,7 +13,7 @@
 
     <div id="passenger-details"></div>
 
-    <div>
+    <div id="sort-buttons">
       <button class="sort-by-survived">Sort by Survived</button>
       <button class="sort-by-age">Sort by Age</button>
       <button class="sort-by-sex">Sort by Sex</button>
@@ -21,29 +21,33 @@
       <button class="sort-by-embarked">Sort by Embarked</button>
     </div>
 
-    <h2>Legend</h2>
-    <div id="legend">
-      <h3>Embarked Location (Color)</h3>
-      <ul id="embark">
-        <li style="color: #6D81FA">S</li>
-        <li style="color: #FA865C">C</li>
-        <li style="color: #26A339">Q</li>
-        <li>Unknown Location</li>
-      </ul>
-      <h3>Sex (Shape)</h3>
-      <ul id="sex">
-        <li>Female</li>
-        <li style="list-style-type: square">Male</li>
-      </ul>
-      <h3>Age (Size)</h3>
-      <ul id="age">
-        <li>Adult</li>
-        <li style="font-size: 15px;">Child</li>
-      </ul>
-    </div>
+    <div id="embarked-legend">
+      <div id="embarked-percentage">
+        <h2>Embarked Percentage</h2>
+        <div id="titanic-embarked"></div>
+      </div>
 
-    <h2>Embarked Percentage</h2>
-    <div id="titanic-embarked"></div>
+      <div id="legend">
+        <h2>Legend</h2>
+        <h3>Embarked Location (Color)</h3>
+        <ul id="embark">
+          <li style="color: #6D81FA">S</li>
+          <li style="color: #FA865C">C</li>
+          <li style="color: #26A339">Q</li>
+          <li>Unknown Location</li>
+        </ul>
+        <h3>Sex (Shape)</h3>
+        <ul id="sex">
+          <li>Female</li>
+          <li style="list-style-type: square">Male</li>
+        </ul>
+        <h3>Age (Size)</h3>
+        <ul id="age">
+          <li>Adult</li>
+          <li style="font-size: 15px;">Child</li>
+        </ul>
+      </div>
+    </div>
 
     <script src="script.js" type="module"></script>
   </body>
